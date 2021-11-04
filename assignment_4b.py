@@ -46,19 +46,20 @@ def list_even_tribonacci(user_input): # Lists even tribonacci numbers lower than
     
     if check_int(user_input) == True:  # Checking, if the variable is an integer    
         
-        trib1: 0 # Variables which store 
-        trib2: 0 # Tribonacci numbers' values
-        trib3: 1 # in the phases of the function
+        trib1 = 0 # Variables which store 
+        trib2 = 0 # Tribonacci numbers' values
+        trib3 = 1 # in the phases of the function
         
         while trib3 < user_input: # A loop until the Tribonacci number grows too large
+            if trib3 % 2 == 0:
+                print(trib3)
             trib_temp = trib1 + trib2 + trib3 # trib_temp: a variable to 
             trib1 = trib2                     # store the sum temporarily
             trib2 = trib3
             trib3 = trib_temp
-            if trib3 % 2 == 0:
-                print(trib3)
+            
 
-            print("Printed all even Tribonacci numbers until", user_input)
+        print("Printed all even Tribonacci numbers until", user_input)
     
     else:
         print("To execute this function, you must enter a number.")
@@ -66,7 +67,7 @@ def list_even_tribonacci(user_input): # Lists even tribonacci numbers lower than
 def calculate_factorial(user_input): # Calculates the factorial of the given variable
     
     if check_int(user_input) == True and user_input > 0 and user_input <= 10:  # Checking, if the variable is an integer
-        fact_sum = user_input # Storing the sum in a variable                  # and between values 1 and 10
+        fact_sum = 1 # Storing the sum in a variable                  # and between values 1 and 10
 
         for i in range(user_input):
             fact_sum = fact_sum * (user_input - i)
@@ -84,7 +85,7 @@ def main():
 
         choose_action = int(input("""Now, choose which function to execute: \n
                             1: Is the given number an integer or not? \n
-                            2: Is the given number divisible by both numbers 2 and ? \n
+                            2: Is the given number divisible by both numbers 2 and 7? \n
                             3: How many days, hours, minutes and seconds the given number is. \n
                             4: Is the given number a palindromic number? \n
                             5: List all even Tribonacci numbers until the given number. \n
